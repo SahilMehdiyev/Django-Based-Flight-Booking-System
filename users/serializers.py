@@ -1,7 +1,8 @@
+from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import get_user_model
-from rest_framework.serializers import Serializer, ValidationError
-from .models import User
+from rest_framework.serializers import Serializer, ValidationError,ModelSerializer
+from .models import Flight, User
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -38,6 +39,46 @@ class LoginSerializer(TokenObtainPairSerializer):
                 raise ValidationError('Invalid credentials')
         raise ValidationError('Email is required')
     
+
+
+class FlightSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Flight
+        fields = '__all__'
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 # class TokenSerializer(Serializer):
     
