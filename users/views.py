@@ -8,6 +8,7 @@ from rest_framework import status
 from .serializers import FlightSerializer
 from rest_framework.generics import CreateAPIView
 from rest_framework import generics
+from rest_framework.permissions import IsAuthenticated
 
 class LoginView(TokenObtainPairView):
     '''
@@ -43,11 +44,14 @@ class LoginView(TokenObtainPairView):
 
 # Method2
 class FlightCreateAPIView(CreateAPIView):
+    permission_classes = [IsAuthenticated]
     queryset = Flight.objects.all()
     serializer_class = FlightSerializer
 
 # Method 1
 class FlightDetailAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+
     #veritabanindan ucus nesnesini getirir
     def get_object(self,pk):
         try:
