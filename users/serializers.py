@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import get_user_model
 from rest_framework.serializers import Serializer, ValidationError,ModelSerializer
-from .models import Flight, User
+from .models import Flight, User, Reservation
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -48,8 +48,16 @@ class FlightSerializer(serializers.ModelSerializer):
         
         
 
-
-
+# class FlightFareSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = FlightFare
+#         fields = ['temp_id', 'flight_ids', 'brand_ids']
+        
+        
+class ReservationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reservation
+        fields = '__all__'
 
 
 
