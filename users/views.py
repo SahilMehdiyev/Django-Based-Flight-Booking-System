@@ -182,13 +182,13 @@ class ReservationListAPIView(APIView):
     
     
 class ReservationDetailAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     
     def get_object(self,pk):
         try:
-            return Reservation.objects.get(pk=pk, user=self.request.user)
+            return Reservation.objects.get(pk=pk)
         except Reservation.DoesNotExist:
-            return Response
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
     def get(self,request,pk):
         reservation = self.get_object(pk)
@@ -216,4 +216,4 @@ class ReservationDetailAPIView(APIView):
     
             
                     
-    
+

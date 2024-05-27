@@ -57,7 +57,7 @@ class FlightSerializer(serializers.ModelSerializer):
 class ReservationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Reservation
-        fields = '__all__'
+        fields = ['user', 'flight', 'passenger_name', 'passenger_email', 'passenger_phone', 'reservation_date', 'total_price', 'is_paid']
 
 
 
