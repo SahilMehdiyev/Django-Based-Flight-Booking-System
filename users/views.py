@@ -9,6 +9,10 @@ from .serializers import FlightSerializer,ReservationSerializer
 from rest_framework.generics import CreateAPIView
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import ValidationError
+import stripe
+from django.conf import settings
+
 
 class LoginView(TokenObtainPairView):
     '''
@@ -206,7 +210,6 @@ class ReservationDetailAPIView(APIView):
             serializer.save()
             return Response(status=status.HTTP_204_NO_CONTENT)
         
-    
     def delete(self,request,pk):
         reservation = self.get_object(pk)
         if not reservation:
@@ -215,5 +218,3 @@ class ReservationDetailAPIView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
     
             
-                    
-

@@ -1,5 +1,6 @@
+# from datetime import timezone
 from django.db import models
-from django.contrib.auth.models import AbstractUser, AbstractBaseUser,PermissionsMixin,BaseUserManager
+from django.contrib.auth.models import AbstractUser
 from .managers import CustomUserManager
 import uuid
         
@@ -62,8 +63,6 @@ class Flight(models.Model):
 
 
 
-
-
 class Reservation(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
@@ -76,3 +75,6 @@ class Reservation(models.Model):
 
     def __str__(self):
         return f"Reservation for {self.passenger_name} on {self.flight}"
+    
+
+

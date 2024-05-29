@@ -23,6 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-a!h$92u3ai$2tuw3tya3pv-&(o1dh7)ik^(9n3@f6_99hig=m0'
 
+
+STRIPE_SECRET_KEY = 'your_stripe_secret_key'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework',
     'users',
+    'Payment',
 ]
 
 REST_FRAMEWORK = {

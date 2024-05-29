@@ -7,3 +7,7 @@ admin.site.register(Flight)
 # admin.site.register(FlightFare)
 admin.site.register(Reservation)
 
+
+
+
+
