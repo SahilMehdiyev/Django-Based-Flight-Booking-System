@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'Payment',
+    'Reservation',
+    'Ticket',
 ]
 
 REST_FRAMEWORK = {

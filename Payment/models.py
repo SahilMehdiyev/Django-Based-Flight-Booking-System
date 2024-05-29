@@ -3,7 +3,8 @@ from django.db import models
 # from ..users.models import User,Reservation
 
 sys.path.append('/home/sahil/Desktop/FlightApi')
-from users.models import User, Reservation
+from users.models import User
+from Reservation.models import Reservation
 
 
 class Payment(models.Model):
