@@ -2,9 +2,8 @@ from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.contrib.auth import get_user_model
 from rest_framework.serializers import ValidationError
-from .models import Flight, User
+from .models import User
 from django.contrib.auth import authenticate
-# from rest_framework_simplejwt.tokens import RefreshToken
 
 
 # User = get_user_model()
@@ -41,10 +40,7 @@ class LoginSerializer(TokenObtainPairSerializer):
     
 
 
-class FlightSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Flight
-        fields = '__all__'
+
         
         
 

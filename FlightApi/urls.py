@@ -6,4 +6,7 @@ urlpatterns = [
     path('api/',include('users.urls')),
     path('api/',include('Payment.urls')),
     path('api/',include('Reservation.urls')),
+    path('api/',include('Ticket.urls')),
+    path('api/',include('Airline.urls')),
+    path('api/',include('Flights.urls')),
 ]

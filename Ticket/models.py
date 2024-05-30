@@ -3,8 +3,8 @@ from django.db import models
 
 
 
-sys.path.append('/home/sahil/Desktop/FlightApi/Reservation')
-from ..Reservation.models import Reservation
+sys.path.append('/home/sahil/Desktop/FlightApi/')
+from Reservation.models import Reservation
 
 class Ticket(models.Model):
     reservation = models.ForeignKey(Reservation, on_delete=models.CASCADE,related_name='tickets')

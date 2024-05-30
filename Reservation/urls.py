@@ -6,3 +6,4 @@ urlpatterns = [
     path('reservations/',ReservationListAPIView.as_view(), name='reservation_list'),
     path('reservations/<int:pk>/',ReservationDetailAPIView.as_view(), name='reservation-detail'),
 ]
+    

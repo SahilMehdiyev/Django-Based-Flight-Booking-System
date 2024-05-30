@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'Payment',
     'Reservation',
     'Ticket',
+    'Airline',
+    'Flights',
 ]
 
 REST_FRAMEWORK = {

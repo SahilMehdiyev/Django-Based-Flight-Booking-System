@@ -1,8 +1,13 @@
 # from datetime import timezone
+import sys
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from .managers import CustomUserManager
 import uuid
+
+
+sys.path.append('/home/sahil/Desktop/FlightApi')
+from Airline.models import Airline
         
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True,unique=True,default=uuid.uuid4,editable=False)
@@ -22,26 +27,7 @@ class User(AbstractUser):
         return self.username
     
     
-    
-class Airline(models.Model):
-    airline_name = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.airline_name
-    
 
-
-class Flight(models.Model):
-    
-    departue_city = models.CharField(max_length=100)
-    arrivel_city = models.CharField(max_length=100)
-    departure_date = models.DateField()
-    arrivel_date = models.DateField()
-    airline = models.ForeignKey(Airline, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    
-    def __str__(self):
-        return f'{self.airline} Flight from {self.departue_city} to {self.arrivel_city} on {self.departure_date}'
 
 
 

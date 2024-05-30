@@ -2,7 +2,8 @@ import sys
 from django.db import models
 
 sys.path.append('/home/sahil/Desktop/FlightApi')
-from users.models import User,Flight
+from Flights.models import Flight
+from users.models import User
 
 
 class Reservation(models.Model):
